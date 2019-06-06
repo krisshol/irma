@@ -75,7 +75,6 @@
   roles:
     - { role: quarkslab.comodo_cavl, tags: comodo }
 
-
 - name: Sophos provisioning
   hosts: sophos
   become: yes
@@ -199,5 +198,10 @@
   hosts: dummy
   roles:
     - { role: quarkslab.dummy, tags: dummy }
+
+- name: Cuckoo provisionning
+  hosts: Cuckoo provisioning
+  roles:
+    - { role: knaku.cuckoo, tags: cuckoo }
 
 # vim: sw=2
