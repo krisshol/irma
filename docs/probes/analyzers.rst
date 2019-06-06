@@ -242,6 +242,40 @@ then update configuration file located at ``modules/external/virustotal/config.i
     |   VirusTotal   |   private   | ``boolean`` |           | use private api (need a private api key)         |
     +----------------+-------------+-------------+-----------+--------------------------------------------------+
 
+Cuckoo - GNU/Linux or Microsoft Windows
+    ```````````````````````````````````````````
+
+The Cuckoo analyzer can be installed easily by downloading the python
+packages it depends on and by modifying its configuration file.
+It requires that you have an available Cuckoo infrastructure.
+From the installation directory, one can execute:
+
+On GNU/Linux:
+
+.. code-block:: console
+
+    $ pip install -r modules/external/cuckoo/requirements.txt
+    [...]
+    api_url = http://127.0.0.1:8090/
+    web_url = http://127.0.0.1:8080/
+    external_url = http://10.0.3.14/
+    headers = {"Authorization": "Bearer S4MPL3"}
+then update configuration file located at ``modules/external/cuckoo/config.ini``.
+
+.. note:: Meaning of the fields in the configuration file
+
+    +----------------+-------------+-------------+-----------+--------------------------------------------------+
+    |   Section      | Option      | Type        | Default   | Description                                      |
+    +----------------+-------------+-------------+-----------+--------------------------------------------------+
+    |   Cuckoo       |   api_url   | ``string``  |           | api address and port for Cuckoo                  |
+    +----------------+-------------+-------------+-----------+--------------------------------------------------+
+    |   Cuckoo       |   web_url   | ``string``  |           | internal address for Cuckoo                      |
+    +----------------+-------------+-------------+-----------+--------------------------------------------------+
+    |   Cuckoo       | external_url| ``string``  |           | external address for Cuckoo, for accessing GUI   |
+    +----------------+-------------+-------------+-----------+--------------------------------------------------+
+    |   Cuckoo       |   headers   | ``string``  |           | headers needed for requests                      |
+    +----------------+-------------+-------------+-----------+--------------------------------------------------+
+
 
 NSRL - GNU/Linux
 ````````````````
